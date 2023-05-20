@@ -1,7 +1,7 @@
 import "./App.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import React, { useState, useEffect } from 'react';
 
 //<iframe src="https://funkygary.github.io/carbon-calcu/" style="width: 100%; height: 100%"></iframe>
 
@@ -18,7 +18,7 @@ function App() {
         <p className="card-text">
           <Form className="container">
             <Form.Group className="mb-3 d-flex align-items-center row" controlId="formSelect">
-              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">米飯</label>
+              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">米飯 🍚</label>
               <Form.Select className="col" aria-label="Default select example" onChange={selectEvent}>
                 <option value="0.1759">1碗 160公克</option>
                 <option value="0.3518">2碗 320公克</option>
@@ -29,7 +29,7 @@ function App() {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3 d-flex align-items-center row" controlId="formSelect">
-              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">麵食</label>
+              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">麵食 🍜</label>
               <Form.Select className="col" aria-label="Default select example" onChange={selectEvent}>
                 <option value="0.124">1碗 100公克</option>
                 <option value="0.248">2碗 200公克</option>
@@ -40,7 +40,7 @@ function App() {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3 d-flex align-items-center row" controlId="formSelect">
-              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">豆魚蛋肉類</label>
+              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">豆魚蛋肉類 🍗</label>
               <Form.Select className="col" aria-label="Default select example" onChange={selectEvent}>
                 <option value="15.5">牛肉 100公克</option>
                 <option value="2.4">豬肉 100公克</option>
@@ -53,11 +53,11 @@ function App() {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3 d-flex align-items-center row" controlId="formSelect">
-              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">蔬菜水果類</label>
+              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">蔬菜水果類 🍎</label>
               <Form.Select className="col" aria-label="Default select example" onChange={selectEvent}>
-                <option value="0.06">蘋果1顆</option>
-                <option value="0.11">香蕉1根</option>
-                <option value="0.05">橘子1顆</option>
+                <option value="0.06">蘋果 1顆</option>
+                <option value="0.11">香蕉 1根</option>
+                <option value="0.05">橘子 1顆</option>
                 <option value="0.22">莓果 144公克</option>
                 <option value="0.05">甘藍菜 100公克</option>
                 <option value="0.04">根莖類 100公克</option>
@@ -65,7 +65,7 @@ function App() {
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3 d-flex align-items-center row" controlId="formSelect">
-              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">點心飲料</label>
+              <label className="my-1 mx-4 col" for="inlineFormCustomSelectPref">點心飲料 ☕</label>
               <Form.Select className="col" aria-label="Default select example" onChange={selectEvent}>
                 <option value="0.6">牛奶1杯 250公克</option>
                 <option value="0.3">米漿1杯 250公克</option>
@@ -80,7 +80,7 @@ function App() {
                 <option value="0.14">奶茶1份 鋁箔包300毫升</option>
               </Form.Select>
             </Form.Group>
-            <Button variant="primary" type="submit" className="w-100 border-0" style={{ 'background-color': '#ed8c01', color: 'white' }}>
+            <Button variant="primary" className="w-100 border-0" style={{ 'background-color': '#ed8c01', color: 'white' }}>
               點我計算
             </Button>
           </Form>
