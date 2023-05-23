@@ -23,9 +23,17 @@ function App() {
           {
             totalCarbon > 0 ?
               <>
-                <p className="card-text">你的這一餐總共有： {totalCarbon} 克 碳排放</p>
-                <p className="card-text">約等於：汽車行駛 {Math.round(totalCarbon / 0.196974607 * 10) / 10} 公里</p>
-                <p className="card-text">需要約 {Math.ceil(totalCarbon / 0.9)} 棵樹，才能抵銷你的這一餐</p>
+                <p className="card-text">你的這一餐總共有： {totalCarbon} 克 碳排放 💨</p>
+                <p className="card-text">約等於：汽車 🚗 行駛 {Math.round(totalCarbon / 0.196974607 * 10) / 10} 公里</p>
+                <p className="card-text">需要約 {Math.ceil(totalCarbon / 0.9)} 棵樹 🌳，才能抵銷你的這一餐</p>
+                <p className="card-text">備註：台灣每人一年平均排放 10.77 公噸二氧化碳，每日平均排放30公斤。</p>
+                <p className="card-text">資料來源：
+                  中華民國國家溫室氣體清冊報告<br />
+                  環保署產品碳足跡計算服務平台碳足跡資料庫<br />
+                  衛生福利部國民健康署 食物代換表<br />
+                  環境品質文教基金會<br />
+                  Poore & Nemecek (2018) - Reducing food’s environmental impacts through producers and consumers.
+                  U.S. Environmental Protection Agency</p>
               </>
               :
               <Form className="container">
