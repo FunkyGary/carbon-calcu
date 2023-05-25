@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from 'react';
 
-//<iframe src="https://funkygary.github.io/carbon-calcu/" style="width: 100%; height: 100%"></iframe>
+//<iframe src="https://funkygary.github.io/carbon-calcu/" style="width: 100%; height: 720px"></iframe>
 
 function App() {
   const [riceCarbon, setRiceCarbon] = useState(0.12)
@@ -27,19 +27,14 @@ function App() {
               <p className="card-text">約等於：<br />🚗 一台汽車行駛 <span style={{ color: '#E06666', fontWeight: 'bold' }} className="h4 text-decoration-underline">{Math.round(totalCarbon / 0.196974607 * 10) / 10}</span> 公里</p>
               <p className="card-text">🌳 <span style={{ color: '#6AA84F', fontWeight: 'bold' }} className="h4 text-decoration-underline">{Math.ceil(totalCarbon / 0.9)}</span> 棵樹一個月的碳吸收量</p>
               <br />
-              <p className="card-text">備註：台灣每人一年平均排放 10.77 公噸二氧化碳，每日平均排放30公斤。</p>
-              <p className="card-text">資料來源：
-                中華民國國家溫室氣體清冊報告<br />
-                環保署產品碳足跡計算服務平台碳足跡資料庫<br />
-                衛生福利部國民健康署 食物代換表<br />
-                環境品質文教基金會<br />
-                Poore & Nemecek (2018) - Reducing food’s environmental impacts through producers and consumers.
-                U.S. Environmental Protection Agency</p>
+              {/* <p className="card-text">備註：台灣每人一年平均排放 10.77 公噸二氧化碳，每日平均排放30公斤。</p> */}
+              <p className="card-text" >延伸閱讀：<a href="https://visionproject.org.tw/project/carbon-on-table" target="_blank">【餐桌碳排放】專題報導</a></p>
+              <p className="card-text" >備註：<a href="https://visionproject.org.tw/story/6735" target="_blank">資料來源及分析方法說明</a></p>
             </>
             :
             <Form className="container">
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍚</span > 米飯 <span className="d-none d-sm-inline">🍚</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">米飯 🍚</label>
                 <Form.Select className="col col-sm" aria-label="Default select example" onChange={e => setRiceCarbon(e.target.value)} value={riceCarbon}>
                   <option value={0.12}>1碗 75公克</option>
                   <option value={0.24}>2碗 150公克</option>
@@ -50,8 +45,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍜</span > 豆魚蛋肉類一 <span className="d-none d-sm-inline">🍜</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">其他澱粉類 🍜</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setCarbCarbon(e.target.value)} value={carbCarbon}>
                   <option value={0.124}>白麵條1碗 100公克</option>
                   <option value={0.25}>白麵條2碗 200公克</option>
@@ -63,8 +58,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍗</span > 豆魚蛋肉類一 <span className="d-none d-sm-inline">🍗</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">豆魚蛋肉類一 🍗</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setMeat1Carbon(e.target.value)} value={meat1Carbon}>
                   <option value={15.5}>牛肉 100公克</option>
                   <option value={2.4}>豬肉 100公克</option>
@@ -77,8 +72,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍤</span > 豆魚蛋肉類二 <span className="d-none d-sm-inline">🍤</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">豆魚蛋肉類二 🍤</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setMeat2Carbon(e.target.value)} value={meat2Carbon}>
                   <option value={15.5}>牛肉 100公克</option>
                   <option value={2.4}>豬肉 100公克</option>
@@ -91,8 +86,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍎</span > 蔬菜水果類一 <span className="d-none d-sm-inline">🍎</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">蔬菜水果類一 🍎</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setVetge1Carbon(e.target.value)} value={vetge1Carbon}>
                   <option value={0.06}>蘋果 1顆</option>
                   <option value={0.11}>香蕉 1根</option>
@@ -104,8 +99,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍌</span > 蔬菜水果類二 <span className="d-none d-sm-inline">🍌</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">蔬菜水果類二 🍌</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setVetge2Carbon(e.target.value)} value={vetge2Carbon}>
                   <option value={0.06}>蘋果 1顆</option>
                   <option value={0.11}>香蕉 1根</option>
@@ -117,8 +112,8 @@ function App() {
                   <option value={0}>無</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
-                <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">☕</span > 點心飲料 <span className="d-none d-sm-inline">☕</span ></label>
+              <Form.Group className="mb-3 d-sm-flex align-items-center">
+                <label className="my-1 mx-4 col">點心飲料 ☕</label>
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setDrinkCarbon(e.target.value)} value={drinkCarbon}>
                   <option value={0.6}>牛奶1杯 250公克</option>
                   <option value={0.3}>米漿1杯 250公克</option>
