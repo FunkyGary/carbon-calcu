@@ -14,13 +14,14 @@ function App() {
   const [vetge2Carbon, setVetge2Carbon] = useState(0.06)
   const [drinkCarbon, setDrinkCarbon] = useState(0.32)
   const [totalCarbon, setTotalCarbon] = useState(0)
+  const [page, setPage] = useState(1)
 
   return (
     <div className="card text-center rounded mx-auto" style={{ maxWidth: '440px' }}>
       <div className="card-header" style={{ 'backgroundColor': '#00a9e0', color: 'white' }}>你的一餐有多少碳排放呢？</div>
       <div className="card-body">
         {
-          totalCarbon > 0 ?
+          page === 2 ?
             <>
               <p className="card-text">你的這一餐總共有：<br /><span style={{ color: '#6EA4D4', fontWeight: 'bold' }} className="h4 text-decoration-underline">{totalCarbon}</span> kgCO2e 二氧化碳當量</p>
               <p className="card-text">約等於：<br />🚗 一台汽車行駛 <span style={{ color: '#E06666', fontWeight: 'bold' }} className="h4 text-decoration-underline">{Math.round(totalCarbon / 0.196974607 * 10) / 10}</span> 公里</p>
@@ -39,7 +40,7 @@ function App() {
             <Form className="container">
               <Form.Group className="mb-3 d-flex align-items-center" controlId="formSelect">
                 <label className="my-1 mx-4 col"> <span className="d-block d-sm-none">🍚</span > 米飯 <span className="d-none d-sm-inline">🍚</span ></label>
-                <Form.Select className="col" aria-label="Default select example" onChange={e => setRiceCarbon(e.target.value)} value={riceCarbon}>
+                <Form.Select className="col col-sm" aria-label="Default select example" onChange={e => setRiceCarbon(e.target.value)} value={riceCarbon}>
                   <option value={0.12}>1碗 75公克</option>
                   <option value={0.24}>2碗 150公克</option>
                   <option value={0.36}>3碗 225公克</option>
@@ -138,14 +139,16 @@ function App() {
             </Form>
         }
         <Button variant="primary" className="w-100 border-0" style={{ 'backgroundColor': '#ed8c01', color: 'white' }} onClick={() => {
-          if (totalCarbon > 0) {
+          if (page === 2) {
             setTotalCarbon(0)
+            setPage(1)
           } else {
             let total = riceCarbon * 1 + meat2Carbon * 1 + meat1Carbon * 1 + carbCarbon * 1 + drinkCarbon * 1 + vetge2Carbon * 1 + vetge1Carbon * 1
             setTotalCarbon(Math.round(total * 100) / 100)
+            setPage(2)
           }
         }}>
-          {totalCarbon > 0 ? '點我重新計算' : '點我計算'}
+          {page === 2 ? '點我重新計算' : '點我計算'}
         </Button>
       </div>
     </div >
