@@ -91,7 +91,7 @@ function App() {
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setVetge1Carbon(e.target.value)} value={vetge1Carbon}>
                   <option value={0.06}>蘋果 1顆</option>
                   <option value={0.11}>香蕉 1根</option>
-                  <option value={0.05}>橘子 1顆</option>
+                  <option value={0.0499}>橘子 1顆</option>
                   <option value={0.22}>莓果 144公克</option>
                   <option value={0.05}>甘藍菜 100公克</option>
                   <option value={0.04}>根莖類 100公克</option>
@@ -104,7 +104,7 @@ function App() {
                 <Form.Select className="col" aria-label="Default select example" onChange={e => setVetge2Carbon(e.target.value)} value={vetge2Carbon}>
                   <option value={0.06}>蘋果 1顆</option>
                   <option value={0.11}>香蕉 1根</option>
-                  <option value={0.05}>橘子 1顆</option>
+                  <option value={0.0499}>橘子 1顆</option>
                   <option value={0.22}>莓果 144公克</option>
                   <option value={0.05}>甘藍菜 100公克</option>
                   <option value={0.04}>根莖類 100公克</option>
